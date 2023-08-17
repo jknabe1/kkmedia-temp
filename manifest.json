@@ -1,0 +1,9 @@
+{
+    "name": "K&K MEDIA GROUP",
+    "short_name": "K&K",
+    "theme_color": "#000",
+    "background_color": "#ffffff",
+    "display": "browser",
+    "scope": "/",
+    "start_url": "/"
+  }

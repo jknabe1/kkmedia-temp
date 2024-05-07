@@ -1,0 +1,199 @@
+/* MFN Loader: Default theme (Single) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Wrapping container */
+.mfn-loader-single-container {
+    margin: 20px;
+    max-width: 1000px;
+}
+
+/* Content */
+.mfn-loader-single-container .mfn-content {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    color: #45465f;
+}
+
+.mfn-loader-single-container .mfn-content strong {
+    font-weight: 700;
+}
+
+.mfn-loader-single-container .mfn-content a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #262626;
+}
+
+.mfn-loader-single-container .mfn-content  a:hover {
+    text-decoration: underline;
+}
+
+.mfn-loader-single-container .mfn-content  a:visited {
+    text-decoration: none;
+    color: #262626;
+}
+
+.mfn-loader-single-container .mfn-preamble {
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #1D7E6B;
+}
+
+.mfn-loader-single-container .mfn-tags-list {
+    display: flex;
+    font-size: 13px;
+    margin: 10px 0 15px 0;
+}
+
+.mfn-loader-single-container .mfn-tag {
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    max-height: min-content;
+    padding: 2px 4px;
+    margin-right: 10px;
+    background: #FFFFFF;
+    color: #1D7E6B;
+    user-select: none;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 4px;
+}
+
+.mfn-loader-single-container .mfn-title {
+    font-family: Inter, sans-serif;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 10px;
+    color: #45465f;
+}
+
+.mfn-loader-single-container .mfn-date {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #45465f;
+}
+
+.mfn-loader-single-container .mfn-content img {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+    height: 100%;
+    width: 100%;
+}
+
+.mfn-loader-single-container .mfn-content table,
+.mfn-loader-single-container .mfn-content td,
+.mfn-loader-single-container .mfn-content th {
+    border: 1px solid #dddddd;
+}
+
+.mfn-loader-single-container .mfn-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.mfn-loader-single-container .mfn-content th, .mfn-content td {
+    padding: 6px;
+}
+
+.mfn-loader-single-container .mfn-footer hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid #dddddd;
+}
+
+.mfn-loader-single-container .mfn-file-type-image {
+    background-image: url('../png/file-image.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 24px;
+}
+
+.mfn-loader-single-container .mfn-file-type-file {
+    background-image: url('../png/file-regular.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 24px;
+}
+
+.mfn-loader-single-container .mfn-attachment-text {
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    color: #1D7E6B;
+    min-width: 350px;
+}
+
+.mfn-loader-single-container .mfn-attachment {
+    display: flex;
+    margin-bottom: 20px;
+    width: min-content;
+    cursor: pointer;
+    align-items: center;
+}
+
+.mfn-loader-single-container .mfn-attachment:hover {
+    opacity: .8;
+}
+
+.mfn-loader-single-container .mfn-attachment .mfn-thumbnail {
+    display: inline-block;
+    cursor: pointer;
+    height: auto;
+    width: 55px;
+    margin-right: 10px;
+    border: 1px solid #eee;
+}
+
+.mfn-loader-single-container .mfn-attachment.mfn-file-type-pdf:before {
+    display: inline-block;
+    position: relative;
+    background-image: url(assets/png/file-pdf-green.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 28px;
+    width: 28px;
+    margin-right: 4px;
+    content: " ";
+}
+
+.mfn-loader-single-container .mfn-attachment.mfn-file-type-image:before {
+    display: inline-block;
+    position: relative;
+    background-image: url(assets/png/file-image-green.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 28px;
+    width: 28px;
+    margin-right: 4px;
+    content: " ";
+}
+
+.mfn-loader-single-container .mfn-attachment.mfn-file-type-file:before {
+    display: inline-block;
+    position: relative;
+    background-image: url(assets/png/file-regular-green.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 28px;
+    width: 28px;
+    margin-right: 4px;
+    content: " ";
+}
+
+/* May also be set to display: none if you instead want to show the original attachments */
+.mfn-loader-single-container .mfn-attachments-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* .mfn-hide
+    This class should be set to display: none;
+    if the option show_attachments is 'true'
+*/
+.mfn-loader-single-container .mfn-hide {
+    display: none;
+}

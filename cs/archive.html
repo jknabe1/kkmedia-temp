@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example: MFN Loader (Archive template)</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/general.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/archive.css">
+</head>
+<body>
+<div id="wrapper">
+    <h1>Financial reports</h1>
+
+    <!-- The container where the content will end up -->
+    <div id="container" class="mfn-archive-container"></div>
+</div>
+</body>
+<script type="application/javascript">
+
+    // Implements the MFN Loader javascript file
+    if (!window._MFN) {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "https://widget.mfn.se/v1/serve/assets/js/mfn-loader-v0.2.0.js";
+        s.async = true;
+        document.getElementsByTagName("body")[0].appendChild(s);
+    }
+
+    window._MFN = {
+        // The selector of the element where the content of the report
+        // archive should end up
+        outlet: '#container',
+
+        // Default language of the report items shown
+        lang: 'all',
+
+        // The type of view
+        type: 'listview',
+
+        // Feed ID, provided by MFN
+        feed_id: '1ef79c4a-3220-4d33-af20-530d4c7331ea',
+
+        // Default limit of items shown
+        limit: 500,
+
+        tags: ["sub:report"],
+
+        show_year_headers: true,
+
+        mutators: ["report-period"],
+
+        // Report type translations
+        l10n: {
+            'annual': {
+                en: 'Annual Report',
+                sv: 'Årsredovisning',
+            },
+            'yearendreport': {
+                en: 'Year-end Report',
+                sv: 'Bokslutskommuniké',
+            },
+            'interim': {
+                en: 'Interim',
+                sv: 'Delårsrapport',
+            },
+            'correction': {
+                en: 'Correction',
+                sv: 'Rättelse',
+            }
+        },
+
+        // Should most likely be true (Enables proxy attachments)
+        use_proxied_attachment_urls: true,
+
+        post_processor: function (current, item) {
+            var lang = item.properties.lang;
+
+            var y = item.extensions && item.extensions.report_period.from.slice(0, 4) || '*';
+
+
+            var primaryAttachment = item.content.attachments && item.content.attachments.find(a => a.tags && a.tags.includes(':primary'));
+
+            if (!primaryAttachment) {
+                return '';
+            }
+
+            var tags = item.properties.tags || [];
+
+            var isAnnualReport = tags.find(t => t.indexOf('sub:report:annual') !== -1);
+            var isYearEndReport = tags.find(t => t.indexOf('sub:report:interim:q4') !== -1);
+            var isCorrection = tags.find(t => t.indexOf(':correction:') !== -1);
+            var reportTagsArr = tags.filter(t => t.indexOf('sub:report') !== -1);
+
+            var longestReportTag = reportTagsArr.length > 0 ? reportTagsArr.reduce(function (a, b) {
+                return a.length > b.length ? a : b;
+            }) : "report:unknown";
+
+            var quarter = (longestReportTag.split(":").slice(-1)[0]).toUpperCase();
+
+            var genericTitle = isAnnualReport ? this.l10n.annual[lang] + " " : this.l10n.interim[lang] + " ";
+            genericTitle += isAnnualReport ? "" : quarter;
+            isYearEndReport ? genericTitle = this.l10n.yearendreport[lang] + " " + quarter + " " : genericTitle;
+            genericTitle += " ";
+            genericTitle += y;
+            genericTitle += (isCorrection ? " (" + this.l10n.correction[lang] + ")" : "");
+
+            var attachmentLink = '<li class="mfn-report-item mfn-year-' + y + ' mfn-report-group-id-' + item.group_id + '">';
+            attachmentLink += '<span class="mfn-report-title"><a href="' + primaryAttachment.url + '" target="_blank">' + genericTitle + '</a>' + '</span>';
+            attachmentLink += '</li>';
+
+            return attachmentLink;
+        }
+
+    }
+</script>
+</html>

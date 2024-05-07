@@ -1,0 +1,327 @@
+/* MFN Loader: Default theme (List) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Wrapping container */
+.mfn-loader-list-container {
+    margin: 0 20px 20px 20px;
+    max-width: 1000px;
+}
+
+/* Content */
+.mfn-loader-list-container .mfn-content {
+    font-family: Inter, sans-serif;
+}
+
+.mfn-loader-list-container .mfn-preamble {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+    padding-right: 5%;
+    margin-top: 2px;
+}
+
+.mfn-loader-list-container .mfn-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    margin: 2px 0 2px 0;
+}
+
+.mfn-loader-list-container .mfn-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3pt;
+    color: #1D7E6B;
+    background: #FFFFFF;
+    padding: 2px 4px;
+    margin: 4px 5px 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 4px;
+}
+
+.mfn-loader-list-container .mfn-date {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.mfn-loader-list-container .mfn-row {
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    margin: 2em 0 0 0;
+    background-color: transparent;
+    min-width: 200px;
+    height: 100%;
+}
+
+.mfn-loader-list-container .mfn-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.mfn-loader-list-container a.mfn-title {
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.2pt;
+    width: 80%;
+    color: #45465f;
+}
+
+.mfn-loader-list-container .mfn-loader-mfn-loader-list-container pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Toolbar */
+.mfn-loader-list-container .mfn-toolbar-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    font-family: Inter, sans-serif;
+    margin-bottom: 20px;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option {
+    display: flex;
+    margin: 0 0 0 5px;
+    flex-direction: column;
+    color: #45465f;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option select {
+    font-family: Inter, sans-serif;
+    color: #6a7b8c;
+}
+
+.mfn-loader-list-container .mfn-toolbar-selects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option span {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 15px 10px 6px 0;
+}
+
+.mfn-loader-list-container .mfn-select {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    border: none;
+    cursor: pointer;
+    width: 160px;
+    height: 32px;
+    padding: 4px 10px;
+    border-radius: 4rem;
+    outline: none;
+    -webkit-appearance: none;
+    background: #DEE2EC url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yMy4yNDUgNGwtMTEuMjQ1IDE0LjM3NC0xMS4yMTktMTQuMzc0LS43ODEuNjE5IDEyIDE1LjM4MSAxMi0xNS4zOTEtLjc1NS0uNjA5eiIvPjwvc3ZnPg==) no-repeat right 10px top 50%;
+    background-size: 13px 13px;
+}
+
+.mfn-loader-list-container #mfn-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.mfn-loader-list-container .mfn-search-input {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    width: 100%;
+    min-width: 120px;
+    height: 24px;
+    color: #6a7b8c;
+    margin: 10px 10px 0 0;
+    padding: 4px 90px 4px 10px;
+    border-radius: 4rem;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 12px;
+}
+
+.mfn-loader-list-container .mfn-search-button {
+    position: relative;
+    margin: 10px 10px 0 0;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option.mfn-clear {
+    flex-basis: 100%;
+}
+
+
+/* Specifically for the slim toolbar setting */
+.mfn-loader-list-container #mfn-search-slim {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.mfn-loader-list-container .mfn-search-button-slim {
+    position: relative;
+    left: -70px;
+}
+
+.mfn-loader-list-container .mfn-search-input-slim {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    width: 100%;
+    height: 24px;
+    min-width: 180px;
+    color: #6a7b8c;
+    padding: 4px 90px 4px 10px;
+    border: none;
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    outline: none;
+    -webkit-appearance: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 12px;
+}
+
+.mfn-loader-list-container #mfn-search-slim span {
+    margin: 5px 10px 6px 0;
+}
+
+.mfn-loader-list-container .mfn-clear-reset {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    left: -80px;
+    color: #1D7E6B;
+    height: 20px;
+    width: 20px;
+    padding: 0 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: #562644;
+    border-radius: 50%;
+}
+
+.mfn-loader-list-container .mfn-clear-reset span {
+    position: relative;
+    top: -2px;
+    right: -1px;
+    font-size: 13px;
+}
+
+.mfn-loader-list-container .mfn-clear-reset:hover {
+    background: #1D7E6B;
+    color: #ffffff;
+}
+
+.mfn-loader-list-container .mfn-clear-button {
+    margin-top: 15px;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option .mfn-clear {
+    flex-basis: 100%;
+}
+
+.mfn-loader-list-container button,
+.mfn-loader-list-container .mfn-pagination-link {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.4pt;
+    width: min-content;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #212529;
+    font-size: 14px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 16px;
+    white-space: nowrap;
+}
+
+.mfn-loader-list-container .mfn-pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.mfn-loader-list-container button:hover,
+.mfn-loader-list-container .mfn-pagination-link:hover {
+    background: #1D7E6B;
+}
+
+/* Attachments */
+.mfn-loader-list-container .mfn-attachments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: auto;
+    border-left-width:4px ;
+    border-color: #000;
+height: 100%;
+}
+
+.mfn-loader-list-container .mfn-attachment-wrapper:hover {
+    opacity: .8;
+}
+
+.mfn-loader-list-container .mfn-file-type-pdf {
+    background-image: url('assets/png/file-pdf-green.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 26px;
+    width: 26px;
+}
+
+.mfn-loader-list-container .mfn-file-type-pdf:hover {
+    cursor: pointer;
+}
+
+.mfn-loader-list-container .mfn-file-type-image {
+    background-image: url('assets/png/file-image-green.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 26px;
+    width: 26px;
+}
+
+.mfn-loader-list-container .mfn-file-type-image:hover {
+    cursor: pointer;
+}
+
+.mfn-loader-list-container .mfn-file-type-unknown {
+    background-image: url('assets/png/file-regular-green.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 26px;
+    width: 26px;
+}
+
+.mfn-loader-list-container .mfn-file-type-unknown:hover {
+    cursor: pointer;
+}
+
+.mfn-loader-list-container .mfn-info,
+.mfn-loader-list-container .mfn-notfound {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/* Hiding the attachment link text (default) */
+.mfn-loader-list-container .mfn-attachment-text {
+    display: none;
+}
+
+/* Used by setting 'clickable_tags' if true */
+.mfn-loader-list-container .mfn-disabled {
+    pointer-events: none;
+}

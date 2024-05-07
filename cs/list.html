@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example: MFN Loader (Default theme)</title>
+    <link rel="stylesheet" type="text/css" href="themes/default/list.css">
+    <style>
+        /* MFN Loader: Default theme (List) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Wrapping container */
+.mfn-loader-list-container {
+    margin: 0 20px 20px 20px;
+    max-width: 1000px;
+}
+
+/* Content */
+.mfn-loader-list-container .mfn-content {
+    font-family: Inter, sans-serif;
+}
+
+.mfn-loader-list-container .mfn-preamble {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+    padding-right: 5%;
+    margin-top: 2px;
+}
+
+.mfn-loader-list-container .mfn-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 13px;
+    margin: 2px 0 2px 0;
+}
+
+.mfn-loader-list-container .mfn-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3pt;
+    color: #1D7E6B;
+    background: #FFFFFF;
+    padding: 2px 4px;
+    margin: 4px 5px 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 4px;
+}
+
+.mfn-loader-list-container .mfn-date {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.mfn-loader-list-container .mfn-row {
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    margin: 2em 0 0 0;
+    background-color: transparent;
+    min-width: 200px;
+    height: 100%;
+}
+
+.mfn-loader-list-container .mfn-title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.mfn-loader-list-container a.mfn-title {
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.2pt;
+    width: 80%;
+    color: #45465f;
+}
+
+.mfn-loader-list-container .mfn-loader-mfn-loader-list-container pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Toolbar */
+.mfn-loader-list-container .mfn-toolbar-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    font-family: Inter, sans-serif;
+    margin-bottom: 20px;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option {
+    display: flex;
+    margin: 0 0 0 5px;
+    flex-direction: column;
+    color: #45465f;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option select {
+    font-family: Inter, sans-serif;
+    color: #6a7b8c;
+}
+
+.mfn-loader-list-container .mfn-toolbar-selects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option span {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 15px 10px 6px 0;
+}
+
+.mfn-loader-list-container .mfn-select {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    border: none;
+    cursor: pointer;
+    width: 160px;
+    height: 32px;
+    padding: 4px 10px;
+    border-radius: 4rem;
+    outline: none;
+    -webkit-appearance: none;
+    background: #DEE2EC url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yMy4yNDUgNGwtMTEuMjQ1IDE0LjM3NC0xMS4yMTktMTQuMzc0LS43ODEuNjE5IDEyIDE1LjM4MSAxMi0xNS4zOTEtLjc1NS0uNjA5eiIvPjwvc3ZnPg==) no-repeat right 10px top 50%;
+    background-size: 13px 13px;
+}
+
+.mfn-loader-list-container #mfn-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.mfn-loader-list-container .mfn-search-input {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    width: 100%;
+    min-width: 120px;
+    height: 24px;
+    color: #6a7b8c;
+    margin: 10px 10px 0 0;
+    padding: 4px 90px 4px 10px;
+    border-radius: 4rem;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 12px;
+}
+
+.mfn-loader-list-container .mfn-search-button {
+    position: relative;
+    margin: 10px 10px 0 0;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option.mfn-clear {
+    flex-basis: 100%;
+}
+
+
+/* Specifically for the slim toolbar setting */
+.mfn-loader-list-container #mfn-search-slim {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.mfn-loader-list-container .mfn-search-button-slim {
+    position: relative;
+    left: -70px;
+}
+
+.mfn-loader-list-container .mfn-search-input-slim {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    width: 100%;
+    height: 24px;
+    min-width: 180px;
+    color: #6a7b8c;
+    padding: 4px 90px 4px 10px;
+    border: none;
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    outline: none;
+    -webkit-appearance: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 12px;
+}
+
+.mfn-loader-list-container #mfn-search-slim span {
+    margin: 5px 10px 6px 0;
+}
+
+.mfn-loader-list-container .mfn-clear-reset {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    left: -80px;
+    color: #1D7E6B;
+    height: 20px;
+    width: 20px;
+    padding: 0 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: #562644;
+    border-radius: 50%;
+}
+
+.mfn-loader-list-container .mfn-clear-reset span {
+    position: relative;
+    top: -2px;
+    right: -1px;
+    font-size: 13px;
+}
+
+.mfn-loader-list-container .mfn-clear-reset:hover {
+    background: #1D7E6B;
+    color: #ffffff;
+}
+
+.mfn-loader-list-container .mfn-clear-button {
+    margin-top: 15px;
+}
+
+.mfn-loader-list-container .mfn-toolbar-option .mfn-clear {
+    flex-basis: 100%;
+}
+
+.mfn-loader-list-container button,
+.mfn-loader-list-container .mfn-pagination-link {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.4pt;
+    width: min-content;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #212529;
+    font-size: 14px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 16px;
+    white-space: nowrap;
+}
+
+.mfn-loader-list-container .mfn-pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.mfn-loader-list-container button:hover,
+.mfn-loader-list-container .mfn-pagination-link:hover {
+    background: #1D7E6B;
+}
+
+/* Attachments */
+.mfn-loader-list-container .mfn-attachments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: auto;
+    border-left-width:4px ;
+    border-color: #000;
+height: 100%;
+}
+
+.mfn-loader-list-container .mfn-attachment-wrapper:hover {
+    opacity: .8;
+}
+
+.mfn-loader-list-container .mfn-file-type-pdf {
+    background-image: url('assets/png/file-pdf-green.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 26px;
+    width: 26px;
+}
+
+.mfn-loader-list-container .mfn-file-type-pdf:hover {
+    cursor: pointer;
+}
+
+.mfn-loader-list-container .mfn-file-type-image {
+    background-image: url('assets/png/file-image-green.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 26px;
+    width: 26px;
+}
+
+.mfn-loader-list-container .mfn-file-type-image:hover {
+    cursor: pointer;
+}
+
+.mfn-loader-list-container .mfn-file-type-unknown {
+    background-image: url('assets/png/file-regular-green.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 26px;
+    width: 26px;
+}
+
+.mfn-loader-list-container .mfn-file-type-unknown:hover {
+    cursor: pointer;
+}
+
+.mfn-loader-list-container .mfn-info,
+.mfn-loader-list-container .mfn-notfound {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/* Hiding the attachment link text (default) */
+.mfn-loader-list-container .mfn-attachment-text {
+    display: none;
+}
+
+/* Used by setting 'clickable_tags' if true */
+.mfn-loader-list-container .mfn-disabled {
+    pointer-events: none;
+}
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <!-- The container where the content will end up -->
+    <div id="container"></div>
+</div>
+
+
+
+</body>
+<script type="application/javascript">
+    // Implements the MFN Loader javascript file
+    if (!window._MFN) {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "https://widget.mfn.se/v1/serve/assets/js/mfn-loader-v0.2.0.js";
+        s.async = true;
+        document.getElementsByTagName("body")[0].appendChild(s);
+    }
+
+    window._MFN = {
+        // Element where the news feed should end up
+        outlet: '#container',
+
+        // Default language of the news items shown
+        lang: 'all',
+
+        // 'selected' uses locale from lang, other options are 'en', 'sv' eg.
+        // and so on
+        l10nLang: 'sv',
+
+        // The type of view
+        type: 'listview',
+
+        // Feed ID, provided by MFN
+        feed_id: '1ef79c4a-3220-4d33-af20-530d4c7331ea',
+
+        // Path to the page where a single view version has been implemented
+        single_view_url: 'single.html',
+
+        // Enable if you want to activate a disclaimer page for news items
+        // of a specific tag
+        
+        //disclaimer_redirect_tag: 'cus:disclaimer',
+        //disclaimer_redirect_url: 'disclaimer.html',
+        
+
+        // Default limit of items shown
+        limit: 10,
+
+        // Adds a summary of the article
+        show_summary: true,
+
+        // Set preferred length of the summary, default: 250
+        // summary_len: 100,
+
+        // Cut length of summary to 'summary_len'
+        // good if you want to prevent long text, eg Disclaimer
+        summary_cut: true,
+
+        // 'default' (:regulatory, sub:report:interim, sub:report:annual)
+        // or add your own eg [{tag: ':regulatory'}]
+        show_tags: [{tag: ':regulatory'},{tag: 'sub:report:interim'},{tag: 'sub:report:annual'}],
+
+        // Show attachments
+        show_attachments: true,
+
+        // Enable clickable tags
+        clickable_tags: true,
+
+        // Query Param Prefix, to prevent 404 in for example wordpress that also uses 'year' for other purposes
+        // query_param_prefix: 'mfn-',
+
+        // Toolbar
+        // Note: you can hide the toolbar by uncommenting it, and instead perhaps use 'tags' below for a default filter
+        toolbar: [
+            {
+                // show search
+                item: 'search',
+                // if true an Ajax search is added to the search bar
+                live_search: true,
+                // the debounce time for the ajax search if enabled
+                live_search_delay: 300,
+                // save space by combining search field, search button and clear button
+                slim_mode: false,
+                // auto hides the clear button
+                auto_hide_clear_button: true
+            },
+            // 'default' or [{tag: ':regulatory'},
+            // {tag: 'sub:report:interim'}] etc.
+            {item: 'category', tags: 'default'},
+            {item: 'year', start: 2010},
+            {item: 'lang', languages: ['sv', 'en']},
+            {item: 'clear'}
+        ],
+
+        // Shows for example 'All (Categories)' in select inputs (Default)
+        show_select_info: true,
+
+        // Filter feed by the following tags
+        // Typical use cases:
+        // * Setting the default filtering in the toolbar
+        // * For custom 'listview' without a toolbar where you want to choose what to filter by in code
+        // tags: [':regulatory'],
+
+        // Your own local to override text selection or add for
+        // other l10n languages (For the toolbar text and tags)
+        l10n: {
+            'Search': {
+                sv: 'Sök',
+                en: 'Search'
+            },
+            'Search placeholder': {
+                sv: 'Sök',
+                en: 'Search'
+            },
+        },
+
+        // Show additional filter info, default: false
+        show_info: true,
+        // Show not found element, default: false
+        show_notfound: true,
+
+        // Override default 'not found' element
+        // notfound_tmpl: {
+        //  sv: '<div class="mfn-notfound"><span>Kunde inte hitta några nyhetsartiklar.</span></div>',//  en: '<div class="mfn-notfound"><span>Couldn\'t find any news articles.</span></div>',
+        // },
+
+        // Should most likely be true (Enables proxy attachments)
+        use_proxied_attachment_urls: true,
+
+        // Shows the date
+        show_date: true,
+
+        // Example of configuring locale and time zone,
+        // Swedish timezone is default if date_setting is not set
+        
+        // date_setting: {
+        //     // eg. for US: 'en-US',
+        //     locale: 'sv-SE',
+        //      option: {
+        //         // or 'long', 'short',
+        //         month: 'numeric',
+        //         // or '2-digit',
+        //         year: 'numeric',
+        //         // or '2-digit',
+        //         day: 'numeric',
+        //         // eg. 'America/New_York'
+        //         timeZone: 'Europe/Stockholm'
+        //     }
+        // },
+        
+
+        // If you want to implement your own custom date formatter
+        // you can add your own function
+        // format_date: function(date) {
+        //     return date.toLocaleTimeString('sv-SE', {
+        //         month: 'long',
+        //         year: 'numeric',
+        //         day: 'numeric',
+        //         timeZone: 'Europe/Stockholm'
+        //     });
+        // },
+
+        // Example of implementing your own HTML for a news item
+        // post_processor: function(current, item) {
+        //  console.log(item);
+        //     return '<div>' + item.content.title + '</div>';
+        // }
+
+    }
+</script>
+</html>

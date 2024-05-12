@@ -1,12 +1,9 @@
-@use "./variables" as *;
-
 .is_subscription_page.mfn {
   > h1 {
     display: none;
   }
 }
 .mfn-info-main-1 {
-    @include font(1.75rem, 400, 120%);
     letter-spacing: 0.035rem;
     margin-bottom: 2rem;
 }
@@ -19,19 +16,10 @@
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      @media (min-width: $screen-md) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-        column-gap: 2rem;
-        row-gap: 0.5rem;
-      }
     }
   }
   .mfn-policy-text {
-    font-size: 0.875rem;
-    color: $darkGrey;
-    a {
+    font-size: 0.875rem;    a {
       text-decoration: underline;
     }
   }
@@ -44,13 +32,7 @@
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      @media (min-width: $screen-md) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-        column-gap: 2rem;
-    row-gap: 0.5rem;
-      }
+      
     }
   }
   .mfn-policy {
@@ -64,13 +46,8 @@
 }
 .mfn-sub-submit {
   margin-top: 1.5rem;
-    @include font(1rem, 400, 1.5rem);
     letter-spacing: .02rem;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     border-width: 1px;
-    border-color: $indigoBlue;
-    &:hover {
-      opacity: $opacity;
-    }
 }
